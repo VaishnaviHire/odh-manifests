@@ -23,7 +23,7 @@ spec:
     referencePolicy:
       type: Source
   - annotations:
-      opendatahub.io/notebook-software: '[{"name":"Python","version":"v3.6.8"}]'
+      opendatahub.io/notebook-software: '[{"name":"Python","version":"v3.8.6"}]'
       opendatahub.io/notebook-python-dependencies: '[{"name":"JupyterLab","version": "2.2.4"}, {"name": "Notebook","version": "6.2.0"}]'
       openshift.io/imported-from: quay.io/thoth-station/s2i-minimal-notebook
     from:
