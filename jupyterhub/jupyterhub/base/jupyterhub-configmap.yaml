@@ -6,6 +6,7 @@ metadata:
     opendatahub.io/configurable: "true"
     opendatahub.io/needs-update: "true"
   name: jupyterhub-cfg
+  namespace: opendatahub
 data:
   jupyterhub_config.py: ""
   jupyterhub_admins: "admin"
