@@ -12,3 +12,4 @@ data:
   gpu_mode: ""
   singleuser_pvc_size: 2Gi
   test_size: 5Gi
+  test_singleuser: 1Gi
