@@ -4,11 +4,10 @@ metadata:
   labels:
     app: jupyterhub
     opendatahub.io/configurable: "true"
-    opendatahub.io/needs-update: "true"
   name: jupyterhub-cfg
 data:
   jupyterhub_config.py: ""
   jupyterhub_admins: "admin"
   gpu_mode: ""
   singleuser_pvc_size: 2Gi
-  test_local_field: 5Gi
+
