@@ -11,8 +11,8 @@ spec:
       name: jupyterhub-img:latest
   source:
     git:
-      uri: https://github.com/opendatahub-io/jupyterhub-odh
-    type: Git
+      ref: remove-publish-service
+      uri: https://github.com/red-hat-data-services/jupyterhub-odh
   strategy:
     sourceStrategy:
       from:
