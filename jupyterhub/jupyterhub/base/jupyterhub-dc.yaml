@@ -147,7 +147,7 @@ spec:
               key: TRAEFIK_API_PASSWORD
         - name: JUPYTERHUB_GROUPS_DEFAULT_DENIED
           value: "true"
-        image: quay.io/odh-jupyterhub/jupyterhub-img:v0.3.3
+        image: quay.io/vhire/jupyterhub-img:validation
         imagePullPolicy: "Always"
         name: jupyterhub
         ports:
@@ -201,7 +201,7 @@ spec:
           value: jupyterhub-db
         - name: JUPYTERHUB_DATABASE_NAME
           value: jupyterhub
-        image: quay.io/odh-jupyterhub/jupyterhub-img:v0.3.3
+        image: quay.io/vhire/jupyterhub-img:validation
         imagePullPolicy: "Always"
         name: wait-for-database
         resources:
