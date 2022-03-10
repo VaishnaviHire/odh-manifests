@@ -75,3 +75,15 @@ rules:
       - rbac.authorization.k8s.io
     resources:
       - rolebindings
+  - apiGroups:
+      - apps.openshift.io
+    verbs:
+      - get
+      - list
+      - watch
+      - create
+      - update
+      - patch
+      - delete
+    resources:
+      - deploymentconfigs
