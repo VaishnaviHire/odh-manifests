@@ -22,3 +22,8 @@ rules:
       - ''
     resources:
       - nodes
+      - pods
+      - serviceaccounts
+      - secrets
+      - services
+      - namespaces
