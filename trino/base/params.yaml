@@ -20,3 +20,5 @@ varReference:
     kind: Deployment
   - path: spec/template/spec/containers[]/env[]/valueFrom/secretKeyRef/name
     kind: StatefulSet
+  - path: spec/template/spec/containers[]/resources/requests/cpu
+    kind: StatefulSet
