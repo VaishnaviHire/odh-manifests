@@ -6,7 +6,6 @@ metadata:
     app: grafana
 spec:
   # Imported from https://github.com/argoproj/argo-workflows/blob/v3.2.3/examples/grafana-dashboard.json
-  name: argo-dashboard.json
   json: >
    {
           "annotations": {
