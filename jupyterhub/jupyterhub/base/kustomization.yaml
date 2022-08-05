@@ -19,6 +19,7 @@ resources:
 - jupyterhub-singleuser-profiles-sizes-configmap.yaml
 - jupyterhub-singleuser-profiles-ui-configmap.yaml
 - jupyterhub-spark-operator-configmap.yaml
+- jupyterhub-monitoring-rolebinding.yaml
 - jupyterhub-groups-configmap.yaml
 - jupyterhub-notebook-image-puller-rb.yaml
 - traefik-credentials-secret.yaml
