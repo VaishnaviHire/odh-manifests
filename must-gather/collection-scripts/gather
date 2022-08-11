@@ -1,0 +1,18 @@
+#!/bin/bash
+
+kfdefs=$(oc get kfdefs --all-namespaces -o=jsonpath='{range .items[*]}{.metadata.namespace}{"\n"}{end}')
+
+# Get logs from all KfDef namespaces
+for i in $kfdefs;
+do
+# Get pod logs for all the pods in KfDef namespaces
+oc adm inspect namespace/"$i" --dest-dir=must-gather || echo "Error getting logs from $i"
+
+done
+
+## Get Operator pod logs
+mkdir must-gather/odh-operator || echo "Error creating odh-operator directory"
+oc logs deployment/opendatahub-operator -n openshift-operators >> must-gather/odh-operator/pod.log
+
+exit 0
+
