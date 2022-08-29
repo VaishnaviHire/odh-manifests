@@ -10,6 +10,7 @@ kind: Deployment
 metadata:
   name: deployment
 spec:
+  replicas: 1
   template:
     metadata:
       labels:
