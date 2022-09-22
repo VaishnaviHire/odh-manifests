@@ -15,6 +15,10 @@ resources:
 - routes.yaml
 - service.yaml
 - rhodsquickstartcrd.yaml
+- odh-application-crd.yaml
+- odh-dashboard-crd.yaml
+- odh-document-crd.yaml
+- jupyter.yaml
 images:
 - name: rhods-dashboard
   newName: quay.io/opendatahub/rhods-dashboard
