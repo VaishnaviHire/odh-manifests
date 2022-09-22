@@ -15,8 +15,8 @@ resources:
 - routes.yaml
 - service.yaml
 - odh-application-crd.yaml
-- odh-dashboard-crd.yaml
 - odh-document-crd.yaml
+- odh-quick-start-crd.yaml
 - jupyter.yaml
 images:
 - name: rhods-dashboard
