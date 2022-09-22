@@ -14,7 +14,6 @@ resources:
 - deployment.yaml
 - routes.yaml
 - service.yaml
-- rhodsquickstartcrd.yaml
 - odh-application-crd.yaml
 - odh-dashboard-crd.yaml
 - odh-document-crd.yaml
