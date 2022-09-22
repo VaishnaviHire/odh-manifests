@@ -101,3 +101,24 @@ rules:
       - delete
     resources:
       - notebooks
+  - apiGroups:
+      - dashboard.opendatahub.io
+    verbs:
+      - get
+      - list
+    resources:
+      - odhapplications
+  - apiGroups:
+      - dashboard.opendatahub.io
+    verbs:
+      - get
+      - list
+    resources:
+      - odhdocuments
+  - apiGroups:
+      - console.openshift.io
+    verbs:
+      - get
+      - list
+    resources:
+      - odhquickstarts
