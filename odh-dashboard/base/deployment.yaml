@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: odh-dashboard
 spec:
-  replicas: $(DASHBOARD_REPLICA)
+  replicas: 2
   selector:
     matchLabels:
       deployment: odh-dashboard
@@ -24,7 +24,7 @@ spec:
                       values:
                         - odh-dashboard
                 topologyKey: topology.kubernetes.io/zone
-      serviceAccount: odh-dashboard
+      serviceAccount: $(DASHBOARD_REPLICA)
       containers:
       - name: odh-dashboard
         image: odh-dashboard
