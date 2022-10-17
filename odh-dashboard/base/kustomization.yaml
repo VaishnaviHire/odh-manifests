@@ -14,7 +14,7 @@ resources:
 - deployment.yaml
 - routes.yaml
 - service.yaml
-#images:
-#- name: odh-dashboard
-#  newName: quay.io/opendatahub/odh-dashboard
-#  newTag: v2.2.1
+images:
+- name: odh-dashboard
+  newName: quay.io/opendatahub/odh-dashboard
+  newTag: v2.2.1

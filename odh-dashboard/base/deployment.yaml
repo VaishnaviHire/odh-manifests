@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: odh-dashboard
 spec:
-  replicas: 2
+  replicas: $(DASHBOARD_REPLICA)
   selector:
     matchLabels:
       deployment: odh-dashboard
@@ -27,7 +27,7 @@ spec:
       serviceAccount: odh-dashboard
       containers:
       - name: odh-dashboard
-        image: $(dashboard-image)
+        image: odh-dashboard
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
