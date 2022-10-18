@@ -8,6 +8,22 @@ resources:
 - tensorflow-notebook-imagestream.yaml
 - elyra-notebook-imagestream.yaml
 
+configMapGenerator:
+  - name: notebook-config
+    envs:
+      - params.env
+
+vars:
+  - name: minimal-image
+    objref:
+      kind: ConfigMap
+      apiVersion: v1
+      name: notebook-config
+    fieldref:
+      fieldpath: data.minimal-image
+
+configurations:
+  - params.yaml
 commonLabels:
   opendatahub.io/component: "true"
   component.opendatahub.io/name: jupyterhub

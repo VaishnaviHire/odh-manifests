@@ -1,0 +1,4 @@
+varReference:
+- path: spec/tags[]/from/name
+  kind: ImageStream
+  apiGroup: image.openshift.io/v1
