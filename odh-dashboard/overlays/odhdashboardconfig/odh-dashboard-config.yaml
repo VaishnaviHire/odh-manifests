@@ -4,6 +4,8 @@ kind: OdhDashboardConfig
 metadata:
   creationTimestamp: null
   name: odh-dashboard-config
+  labels:
+    opendatahub.io/configurable: "true"
 spec:
   dashboardConfig:
     disableBYONImageStream: false
