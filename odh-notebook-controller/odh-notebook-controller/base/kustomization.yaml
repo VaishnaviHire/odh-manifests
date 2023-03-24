@@ -6,4 +6,4 @@ resources:
 images:
   - name: quay.io/opendatahub/odh-notebook-controller
     newName: quay.io/opendatahub/odh-notebook-controller
-    newTag: master-bd77bfc
+    newTag: v1.6.1-1
