@@ -1,0 +1,23 @@
+varReference:
+- path: spec/tags[0]/from/name
+  kind: ImageStream
+- path: spec/tags[1]/from/name
+  kind: ImageStream
+- path: spec/tags[0]/from/name
+  kind: ImageStream
+- path: spec/tags[1]/from/name
+  kind: ImageStream
+- path: spec/tags[0]/from/name
+  kind: ImageStream
+- path: spec/tags[1]/from/name
+  kind: ImageStream
+- path: spec/tags[0]/from/name
+  kind: ImageStream
+- path: spec/tags[1]/from/name
+  kind: ImageStream
+- path: spec/tags[0]/from/name
+  kind: ImageStream
+- path: spec/tags[1]/from/name
+  kind: ImageStream
+- path: spec/tags[0]/from/name
+  kind: ImageStream

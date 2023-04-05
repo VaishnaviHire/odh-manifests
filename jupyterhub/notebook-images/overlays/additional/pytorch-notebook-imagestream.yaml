@@ -13,7 +13,7 @@ spec:
   lookupPolicy:
     local: true
   tags:
-  # N Version of the image (v2-2023a-20230322-9f24e3e)
+  # N Version of the image
   - annotations:
       opendatahub.io/notebook-software: '[{"name":"Python","version":"v3.9"},{"name":"PyTorch","version":"1.13"}]'
       opendatahub.io/notebook-python-dependencies: '[{"name":"PyTorch","version":"1.13"},{"name":"Tensorboard","version":"2.11"},{"name":"Boto3","version":"1.26"},{"name":"Kafka-Python","version":"2.0"},{"name":"Matplotlib","version":"3.6"},{"name":"Numpy","version":"1.24"},{"name":"Pandas","version":"1.5"},{"name":"Scikit-learn","version":"1.2"},{"name":"Scipy","version":"1.10"}]'
@@ -21,7 +21,7 @@ spec:
       opendatahub.io/workbench-image-recommended: 'true'
     from:
       kind: DockerImage
-      name: quay.io/modh/odh-pytorch-notebook@sha256:9eb63a61da203178ff2579861a39efedd264447aa45a787d6b7bd9b08c13b1af
+      name: $(odh-pytorch-gpu-notebook-image-n)
     name: "2023.1-cuda-11.7"
     referencePolicy:
       type: Local
@@ -32,7 +32,7 @@ spec:
         openshift.io/imported-from: quay.io/modh/cuda-notebooks
     from:
       kind: DockerImage
-      name: quay.io/modh/cuda-notebooks@sha256:492c37fb4b71c07d929ac7963896e074871ded506230fe926cdac21eb1ab9db8
+      name: $(odh-pytorch-gpu-notebook-image-n-1)
     name: "1.2-cuda-11.4"
     referencePolicy:
       type: Local

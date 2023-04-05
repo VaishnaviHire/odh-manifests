@@ -13,7 +13,7 @@ spec:
   lookupPolicy:
     local: true
   tags:
-  # N Version of the image (v2-2023a-20230322-9f24e3e)
+  # N Version of the image
   - annotations:
       opendatahub.io/notebook-software: '[{"name":"Python","version":"v3.9"}]'
       opendatahub.io/notebook-python-dependencies: '[{"name":"JupyterLab","version": "3.5"}, {"name": "Notebook","version": "6.5"}]'
@@ -22,7 +22,7 @@ spec:
       opendatahub.io/default-image: "true"
     from:
       kind: DockerImage
-      name: quay.io/modh/odh-minimal-notebook-container@sha256:43c88006d3bf71513b5e265a9bcf09b315aaa2142b6175c0e618829927dbaac2
+      name: $(odh-minimal-notebook-image-n)
     name: "2023.1"
     referencePolicy:
       type: Local
@@ -33,7 +33,7 @@ spec:
       openshift.io/imported-from: quay.io/modh/odh-minimal-notebook-container
     from:
       kind: DockerImage
-      name: quay.io/modh/odh-minimal-notebook-container@sha256:a5a7738b09a204804e084a45f96360b568b0b9d85709c0ce6742d440ff917183
+      name: $(odh-minimal-notebook-image-n-1)
     name: "1.2"
     referencePolicy:
       type: Local
