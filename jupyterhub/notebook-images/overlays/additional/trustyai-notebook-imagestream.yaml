@@ -13,14 +13,14 @@ spec:
   lookupPolicy:
     local: true
   tags:
-  # N version of the image (2023a-20230324-9f24e3e)
+  # N version of the image
   - annotations:
       opendatahub.io/notebook-software: '[{"name":"Python","version":"v3.9"}]'
       opendatahub.io/notebook-python-dependencies: '[{"name":"TrustyAI","version":"0.2"}, {"name":"Boto3","version":"1.26"},{"name":"Kafka-Python","version":"2.0"},{"name":"Matplotlib","version":"3.6"},{"name":"Numpy","version":"1.24"},{"name":"Pandas","version":"1.5"},{"name":"Scikit-learn","version":"1.2"},{"name":"Scipy","version":"1.10"}]'
       openshift.io/imported-from: quay.io/modh/odh-trustyai-notebook
     from:
       kind: DockerImage
-      name: quay.io/modh/odh-trustyai-notebook@sha256:f8be3f6622d4bca653568e9c8b43363a842808d4669a3cd397f0d3a4f9a4c165
+      name: $(odh-trustyai-notebook-image-n)
     name: "py3.9-v1"
     referencePolicy:
       type: Local
