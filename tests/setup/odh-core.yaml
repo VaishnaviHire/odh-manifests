@@ -13,7 +13,7 @@ spec:
   - kustomizeConfig:
       parameters:
         - name: namespace
-          value: openshift-operators
+          value: opendatahub
       repoRef:
         name: manifests
         path: openshift-pipelines/cluster

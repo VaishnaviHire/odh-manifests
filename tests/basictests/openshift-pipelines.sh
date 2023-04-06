@@ -15,8 +15,8 @@ PIPELINERUN_CR="${OPENSHIFT_PIPELINES_RESOURCES_DIR}/pipelinerun-hello-world.yam
 
 function verify_openshift_pipelines_operator_install() {
     header "Testing OpenShift Pipelines operator installation"
-    os::cmd::expect_success_and_text "oc get deployment -n openshift-operators openshift-pipelines-operator" "openshift-pipelines-operator"
-    runningpods=($(oc get pods -n openshift-operators -l name=openshift-pipelines-operator --field-selector="status.phase=Running" -o jsonpath="{$.items[*].metadata.name}"))
+    os::cmd::expect_success_and_text "oc get deployment -n opendatahub openshift-pipelines-operator" "openshift-pipelines-operator"
+    runningpods=($(oc get pods -n opendatahub -l name=openshift-pipelines-operator --field-selector="status.phase=Running" -o jsonpath="{$.items[*].metadata.name}"))
     os::cmd::expect_success_and_text "echo ${#runningpods[@]}" "1"
 }
 

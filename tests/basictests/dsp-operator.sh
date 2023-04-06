@@ -14,8 +14,8 @@ os::test::junit::declare_suite_start "$MY_SCRIPT"
 function verify_data_science_pipelines_operator_install() {
     header "Testing Data Science Pipelines operator installation"
 
-    os::cmd::expect_success_and_text "oc get deployment -n openshift-operators openshift-pipelines-operator" "openshift-pipelines-operator"
-    runningpods=($(oc get pods -n openshift-operators -l name=openshift-pipelines-operator --field-selector="status.phase=Running" -o jsonpath="{$.items[*].metadata.name}"))
+    os::cmd::expect_success_and_text "oc get deployment -n opendatahub openshift-pipelines-operator" "openshift-pipelines-operator"
+    runningpods=($(oc get pods -n opendatahub -l name=openshift-pipelines-operator --field-selector="status.phase=Running" -o jsonpath="{$.items[*].metadata.name}"))
     os::cmd::expect_success_and_text "echo ${#runningpods[@]}" "1"
 
     os::cmd::expect_success_and_text "oc get deployment -n ${ODHPROJECT} data-science-pipelines-operator-controller-manager" "data-science-pipelines-operator-controller-manager"
