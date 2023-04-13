@@ -48,7 +48,7 @@ oc get pods -o yaml -n openshift-operators > ${ARTIFACT_DIR}/openshift-operators
 echo "Saving the events in the artifacts directory"
 oc get events --sort-by='{.lastTimestamp}' > ${ARTIFACT_DIR}/${ODHPROJECT}.events.txt
 echo "Saving the logs from the opendatahub-operator pod in the artifacts directory"
-oc logs -n openshift-operators $(oc get pods -n openshift-operators -l name=opendatahub-operator -o jsonpath="{$.items[*].metadata.name}") > ${ARTIFACT_DIR}/opendatahub-operator.log 2> /dev/null || echo "No logs for openshift-operators/opendatahub-operator"
+oc logs -n openshift-operators $(oc get pods -n openshift-operators --field-selector=spec.serviceAccountName=opendatahub-operator-controller-manager -o jsonpath="{$.items[*].metadata.name}") > ${ARTIFACT_DIR}/opendatahub-operator.log 2> /dev/null || echo "No logs for openshift-operators/opendatahub-operator"
 
 if [ "$success" -ne 1 ]; then
     exit 1
