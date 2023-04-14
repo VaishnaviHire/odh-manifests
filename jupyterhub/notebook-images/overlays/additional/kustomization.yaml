@@ -13,3 +13,6 @@ resources:
 commonLabels:
   opendatahub.io/component: "true"
   component.opendatahub.io/name: jupyterhub
+
+configurations:
+- params.yaml
