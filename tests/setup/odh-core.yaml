@@ -11,14 +11,6 @@ spec:
         path: odh-common
     name: odh-common
   - kustomizeConfig:
-      parameters:
-        - name: namespace
-          value: openshift-operators
-      repoRef:
-        name: manifests
-        path: openshift-pipelines/cluster
-    name: openshift-pipelines
-  - kustomizeConfig:
       repoRef:
         name: manifests
         path: odh-dashboard
