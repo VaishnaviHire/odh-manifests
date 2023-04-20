@@ -63,13 +63,7 @@ function setup_monitoring() {
 
 function test_metrics() {
     header "Checking metrics for total number of runs, should be 1 since we have spun up 1 run"
-    ## On OCP 4.11, get-token is removed
-    cluster_version=`oc get -o json clusterversion | jq '.items[0].status.desired.version' | grep "4.11" || echo ""`
-    if [[ -z $cluster_version ]]; then
-        monitoring_token=`oc sa get-token prometheus-k8s -n openshift-monitoring`
-    else
-        monitoring_token=`oc create token prometheus-k8s -n openshift-monitoring`
-    fi
+    monitoring_token=$(oc create token prometheus-k8s -n openshift-monitoring)
     os::cmd::try_until_text "oc -n openshift-monitoring exec -c prometheus prometheus-k8s-0 -- curl -k -H \"Authorization: Bearer $monitoring_token\" 'https://thanos-querier.openshift-monitoring:9091/api/v1/query?query=run_server_run_count' | jq '.data.result[0].value[1]'" "1" $odhdefaulttimeout $odhdefaultinterval
 }
 
