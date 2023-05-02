@@ -13,89 +13,86 @@ commonLabels:
   component.opendatahub.io/name: jupyterhub
 
 configMapGenerator:
-  - name: notebooks-parameters
-    envs:
-      - params.env
+- name: notebooks-parameters
+  env: params.env
 generatorOptions:
   disableNameSuffixHash: true
 vars:
-  - name: odh-minimal-notebook-image-n
-    objref:
-      kind: ConfigMap
-      name: notebooks-parameters
-      apiVersion: v1
-    fieldref:
-      fieldpath: data.odh-minimal-notebook-image-n
-  - name: odh-minimal-notebook-image-n-1
-    objref:
-      kind: ConfigMap
-      name: notebooks-parameters
-      apiVersion: v1
-    fieldref:
-      fieldpath: data.odh-minimal-notebook-image-n-1
-  - name: odh-minimal-gpu-notebook-image-n
-    objref:
-      kind: ConfigMap
-      name: notebooks-parameters
-      apiVersion: v1
-    fieldref:
-      fieldpath: data.odh-minimal-gpu-notebook-image-n
-  - name: odh-minimal-gpu-notebook-image-n-1
-    objref:
-      kind: ConfigMap
-      name: notebooks-parameters
-      apiVersion: v1
-    fieldref:
-      fieldpath: data.odh-minimal-gpu-notebook-image-n-1
-  - name: odh-pytorch-gpu-notebook-image-n
-    objref:
-      kind: ConfigMap
-      name: notebooks-parameters
-      apiVersion: v1
-    fieldref:
-      fieldpath: data.odh-pytorch-gpu-notebook-image-n
-  - name: odh-pytorch-gpu-notebook-image-n-1
-    objref:
-      kind: ConfigMap
-      name: notebooks-parameters
-      apiVersion: v1
-    fieldref:
-      fieldpath: data.odh-pytorch-gpu-notebook-image-n-1
-  - name: odh-generic-data-science-notebook-image-n
-    objref:
-      kind: ConfigMap
-      name: notebooks-parameters
-      apiVersion: v1
-    fieldref:
-      fieldpath: data.odh-generic-data-science-notebook-image-n
-  - name: odh-generic-data-science-notebook-image-n-1
-    objref:
-      kind: ConfigMap
-      name: notebooks-parameters
-      apiVersion: v1
-    fieldref:
-      fieldpath: data.odh-generic-data-science-notebook-image-n-1
-  - name: odh-tensorflow-gpu-notebook-image-n
-    objref:
-      kind: ConfigMap
-      name: notebooks-parameters
-      apiVersion: v1
-    fieldref:
-      fieldpath: data.odh-tensorflow-gpu-notebook-image-n
-  - name: odh-tensorflow-gpu-notebook-image-n-1
-    objref:
-      kind: ConfigMap
-      name: notebooks-parameters
-      apiVersion: v1
-    fieldref:
-      fieldpath: data.odh-tensorflow-gpu-notebook-image-n-1
-  - name: odh-trustyai-notebook-image-n
-    objref:
-      kind: ConfigMap
-      name: notebooks-parameters
-      apiVersion: v1
-    fieldref:
-      fieldpath: data.odh-trustyai-notebook-image-n
+- name: odh-minimal-notebook-image-n
+  objref:
+    kind: ConfigMap
+    name: notebooks-parameters
+    apiVersion: v1
+  fieldref:
+    fieldpath: data.odh-minimal-notebook-image-n
+- name: odh-minimal-notebook-image-n-1
+  objref:
+    kind: ConfigMap
+    name: notebooks-parameters
+    apiVersion: v1
+  fieldref:
+    fieldpath: data.odh-minimal-notebook-image-n-1
+- name: odh-minimal-gpu-notebook-image-n
+  objref:
+    kind: ConfigMap
+    name: notebooks-parameters
+    apiVersion: v1
+  fieldref:
+    fieldpath: data.odh-minimal-gpu-notebook-image-n
+- name: odh-minimal-gpu-notebook-image-n-1
+  objref:
+    kind: ConfigMap
+    name: notebooks-parameters
+    apiVersion: v1
+  fieldref:
+    fieldpath: data.odh-minimal-gpu-notebook-image-n-1
+- name: odh-pytorch-gpu-notebook-image-n
+  objref:
+    kind: ConfigMap
+    name: notebooks-parameters
+    apiVersion: v1
+  fieldref:
+    fieldpath: data.odh-pytorch-gpu-notebook-image-n
+- name: odh-pytorch-gpu-notebook-image-n-1
+  objref:
+    kind: ConfigMap
+    name: notebooks-parameters
+    apiVersion: v1
+  fieldref:
+    fieldpath: data.odh-pytorch-gpu-notebook-image-n-1
+- name: odh-generic-data-science-notebook-image-n
+  objref:
+    kind: ConfigMap
+    name: notebooks-parameters
+    apiVersion: v1
+  fieldref:
+    fieldpath: data.odh-generic-data-science-notebook-image-n
+- name: odh-generic-data-science-notebook-image-n-1
+  objref:
+    kind: ConfigMap
+    name: notebooks-parameters
+    apiVersion: v1
+  fieldref:
+    fieldpath: data.odh-generic-data-science-notebook-image-n-1
+- name: odh-tensorflow-gpu-notebook-image-n
+  objref:
+    kind: ConfigMap
+    name: notebooks-parameters
+    apiVersion: v1
+  fieldref:
+    fieldpath: data.odh-tensorflow-gpu-notebook-image-n
+- name: odh-tensorflow-gpu-notebook-image-n-1
+  objref:
+    kind: ConfigMap
+    name: notebooks-parameters
+    apiVersion: v1
+  fieldref:
+    fieldpath: data.odh-tensorflow-gpu-notebook-image-n-1
+- name: odh-trustyai-notebook-image-n
+  objref:
+    kind: ConfigMap
+    name: notebooks-parameters
+    apiVersion: v1
+  fieldref:
+    fieldpath: data.odh-trustyai-notebook-image-n
 
-configurations:
-  - params.yaml
