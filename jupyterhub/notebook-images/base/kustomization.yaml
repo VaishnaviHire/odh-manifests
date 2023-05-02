@@ -1,6 +1,12 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-resources: []
+resources:
+- minimal-notebook-imagestream.yaml
+- generic-data-science-notebook-imagestream.yaml
+- minimal-gpu-notebook-imagestream.yaml
+- pytorch-notebook-imagestream.yaml
+- tensorflow-notebook-imagestream.yaml
+- trustyai-notebook-imagestream.yaml
 
 commonLabels:
   opendatahub.io/component: "true"
@@ -90,3 +96,6 @@ vars:
       apiVersion: v1
     fieldref:
       fieldpath: data.odh-trustyai-notebook-image-n
+
+configurations:
+  - params.yaml
