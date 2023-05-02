@@ -90,5 +90,3 @@ vars:
       apiVersion: v1
     fieldref:
       fieldpath: data.odh-trustyai-notebook-image-n
-configurations:
-  - params.yaml
