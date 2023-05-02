@@ -41,7 +41,7 @@ vars:
       name: notebooks-parameters
       apiVersion: v1
     fieldref:
-      fieldpath: odh-minimal-gpu-notebook-image-n
+      fieldpath: data.odh-minimal-gpu-notebook-image-n
   - name: odh-minimal-gpu-notebook-image-n-1
     objref:
       kind: ConfigMap
