@@ -16,8 +16,7 @@ commonLabels:
 
 configMapGenerator:
   - name: notebooks-parameters
-    envs:
-      - params.env
+    env: params.env
 generatorOptions:
   disableNameSuffixHash: true
 vars:
