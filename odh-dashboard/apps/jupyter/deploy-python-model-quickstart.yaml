@@ -65,11 +65,11 @@ spec:
         3. In a Jupyter notebook, navigate to a terminal view.
         4. Run this curl command, using the URL you copied in step 1.
         ```
-        curl -X POST -d '{"hello" : "world"}' YOUR_ROUTE/predictions
+        curl -X POST -d '{"hello" ":" "world"}' <URL>/prediction
         ```
         For example:
         ```
-        curl -X POST -d '{"hello" : "world"}' http://example.apps.organization.abc3.p4.openshiftapps.com/predictions
+        curl -X POST -d '{"hello" ":" "world"}' http://example.apps.organization.abc3.p4.openshiftapps.com/prediction
         ```
 
         This should return `{"prediction":"not implemented"}` as output.
