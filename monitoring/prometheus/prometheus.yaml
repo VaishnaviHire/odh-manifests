@@ -322,27 +322,27 @@ spec:
     type: Recreate
 
 ---
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: prometheus-data
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 5Gi
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: alertmanager-data
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 5Gi
+#apiVersion: v1
+#kind: PersistentVolumeClaim
+#metadata:
+#  name: prometheus-data
+#spec:
+#  accessModes:
+#    - ReadWriteOnce
+#  resources:
+#    requests:
+#      storage: 5Gi
+#---
+#apiVersion: v1
+#kind: PersistentVolumeClaim
+#metadata:
+#  name: alertmanager-data
+#spec:
+#  accessModes:
+#    - ReadWriteOnce
+#  resources:
+#    requests:
+#      storage: 5Gi
 
 ---
 apiVersion: v1
