@@ -27,39 +27,6 @@ spec:
           defaultMode: 420
           secretName: prometheus-proxy
       serviceAccountName: prometheus
-      initContainers:
-        - name: wait-for-deployment
-          image: 'registry.redhat.io/ubi8/ubi-minimal@sha256:5d2d4d4dbec470f8ffb679915e2a8ae25ad754cd9193fa966deee1ecb7b3ee00'
-          resources:
-            limits:
-              cpu: 150m
-              memory: 50Mi
-            requests:
-              cpu: 150m
-              memory: 20Mi
-          command:
-            - /bin/sh
-            - '-c'
-            - dashboard_svc_exists=false &&
-              for i in `seq 1 230`; do sleep 10; echo "Waiting for rhods-dashboard service to become available..."; if curl -s -k https://rhods-dashboard.redhat-ods-applications.svc:8443; then dashboard_svc_exists=true; break; fi;done &&
-              if [ $dashboard_svc_exists = false ]; then exit 1; fi  &&
-
-              nb_svc_exists=false &&
-              for i in `seq 1 230`; do sleep 10; echo "Waiting for odh-notebook-controller-service to become available..."; if curl -I http://odh-notebook-controller-service.redhat-ods-applications.svc:8080/metrics; then nb_svc_exists=true; break; fi; done &&
-              if [ $nb_svc_exists = false ]; then exit 1; fi  &&
-
-              modelc_svc_exists=false &&
-              for i in `seq 1 230`; do sleep 10; echo "Waiting for odh-model-controller-metrics-service to become available..."; if curl -I http://odh-model-controller-metrics-service.redhat-ods-applications.svc:8080/metrics; then modelc_svc_exists=true; break; fi; done &&
-              if [ $modelc_svc_exists = false ]; then exit 1; fi  &&
-
-              mm_svc_exists=false &&
-              for i in `seq 1 230`; do sleep 10; echo "Waiting for modelmesh-controller service to become available..."; if curl -I http://modelmesh-controller.redhat-ods-applications.svc:8080/metrics; then mm_svc_exists=true; break; fi; done &&
-              if [ $mm_svc_exists = false ]; then exit 1; fi  &&
-
-              dspo_svc_exists=false &&
-              for i in `seq 1 230`; do sleep 10; echo "Waiting for Data Science Pipelines Operator service to become available..."; if curl -sS -I http://data-science-pipelines-operator-service.redhat-ods-applications.svc:8080/metrics; then dspo_svc_exists=true; break; fi; done &&
-              if [ $dspo_svc_exists = false ]; then exit 1; fi; exit 0
-
       containers:
       - name: oauth-proxy
         args:
@@ -158,4 +125,3 @@ spec:
             cpu: 50m
             memory: 50Mi
       restartPolicy: Always
-      progressDeadlineSeconds: 2400
