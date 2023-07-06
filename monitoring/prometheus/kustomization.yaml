@@ -5,3 +5,4 @@ resources:
   - prometheus-configs.yaml
   - prometheus-secrets.yaml
   - prometheus-viewer-rolebinding.yaml
+  - alertmanager-configs.yaml
