@@ -167,6 +167,9 @@ spec:
   getStartedLink: 'https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html'
   internalRoute: notebookController
   displayName: Jupyter
+  kfdefApplications:
+    - odh-notebook-controller
+    - notebook-images
   support: red hat
   provider: Jupyter
   docsLink: 'https://jupyter.org'
