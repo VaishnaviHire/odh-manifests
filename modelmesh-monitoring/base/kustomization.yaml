@@ -17,7 +17,7 @@ vars:
       name: model-monitoring-parameters
       apiVersion: v1
     fieldref:
-      fieldpath: metadata.namespace
+      fieldpath: data.deployment-namespace
   - name: monitoring-namespace
     objref:
       kind: ConfigMap
