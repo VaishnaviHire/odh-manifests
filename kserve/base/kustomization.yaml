@@ -3,8 +3,6 @@ kind: Kustomization
 resources:
   - ../kserve-built
 
-namespace: opendatahub
-
 patches:
   - path: kserve-controller-manager-patch.yaml
   - path: inferenceservice-config-patch.yaml
